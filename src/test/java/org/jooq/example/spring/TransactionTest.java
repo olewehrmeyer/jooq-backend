@@ -1,6 +1,6 @@
 package org.jooq.example.spring;
 
-import static org.jooq.example.db.h2.Tables.BOOK;
+import static org.jooq.example.db.Tables.BOOK;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
