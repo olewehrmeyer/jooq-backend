@@ -1,26 +1,23 @@
 package org.jooq.example.spring;
 
-import static java.util.Arrays.asList;
-import static org.jooq.example.db.h2.Tables.AUTHOR;
-import static org.jooq.example.db.h2.Tables.BOOK;
-import static org.jooq.example.db.h2.Tables.BOOK_STORE;
-import static org.jooq.example.db.h2.Tables.BOOK_TO_BOOK_STORE;
-import static org.jooq.impl.DSL.countDistinct;
-import static org.junit.Assert.assertEquals;
-
 import org.jooq.DSLContext;
 import org.jooq.Record3;
 import org.jooq.Result;
-import org.jooq.example.db.h2.tables.Author;
-import org.jooq.example.db.h2.tables.Book;
-import org.jooq.example.db.h2.tables.BookStore;
-import org.jooq.example.db.h2.tables.BookToBookStore;
-import org.jooq.example.db.h2.tables.records.BookRecord;
+import org.jooq.example.db.tables.Author;
+import org.jooq.example.db.tables.Book;
+import org.jooq.example.db.tables.BookStore;
+import org.jooq.example.db.tables.BookToBookStore;
+import org.jooq.example.db.tables.records.BookRecord;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import static java.util.Arrays.asList;
+import static org.jooq.example.db.Tables.*;
+import static org.jooq.impl.DSL.countDistinct;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @author Lukas Eder
