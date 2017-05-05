@@ -241,7 +241,40 @@
                                         </generate>
                                         <target>
                                             <packageName>org.jooq.example.db</packageName>
-                                            <directory>target/generated-sources/jooq-h2</directory>
+                                            <directory>target/generated-sources/jooq-postgres</directory>
+                                        </target>
+                                    </generator>
+                                </configuration>
+                            </execution>
+                            <execution>
+                                <id>generate-postgres-sakila</id>
+                                <phase>generate-sources</phase>
+                                <goals>
+                                    <goal>generate</goal>
+                                </goals>
+                                <configuration>
+                                    <jdbc>
+                                        <driver>${db.driverClassName}</driver>
+                                        <url>${db.url}</url>
+                                        <user>${db.username}</user>
+                                        <password>${db.password}</password>
+                                    </jdbc>
+                                    <generator>
+                                        <database>
+                                            <name>org.jooq.util.postgres.PostgresDatabase</name>
+                                            <includes>.*</includes>
+                                            <excludes></excludes>
+                                            <dateAsTimestamp>true</dateAsTimestamp>
+                                            <inputSchema>sakila</inputSchema>
+                                        </database>
+                                        <generate>
+                                            <deprecated>false</deprecated>
+                                            <instanceFields>true</instanceFields>
+                                            <pojos>true</pojos>
+                                        </generate>
+                                        <target>
+                                            <packageName>org.jooq.example.sakiladb</packageName>
+                                            <directory>target/generated-sources/jooq-postgres</directory>
                                         </target>
                                     </generator>
                                 </configuration>
