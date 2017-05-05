@@ -92,6 +92,14 @@
         <profile>
             <id>h2</id>
 
+            <properties>
+                <db.driverClassName>org.h2.Driver</db.driverClassName>
+                <db.url>jdbc:h2:~/jooq-spring-boot-example</db.url>
+                <db.username>sa</db.username>
+                <db.password></db.password>
+                <db.dialect>H2</db.dialect>
+            </properties>
+
             <build>
                 <plugins>
                     <!-- The H2 test schema is loaded here -->
@@ -101,7 +109,6 @@
                         <version>1.5</version>
 
                         <configuration>
-                            <skip>${maven.test.skip}</skip>
                             <forkMode>always</forkMode>
                         </configuration>
 
@@ -113,10 +120,10 @@
                                     <goal>execute</goal>
                                 </goals>
                                 <configuration>
-                                    <driver>${spring.datasource.driverClassName}</driver>
-                                    <url>${spring.datasource.url}</url>
-                                    <username>${spring.datasource.username}</username>
-                                    <password>${spring.datasource.password}</password>
+                                    <driver>${db.driverClassName}</driver>
+                                    <url>${db.url}</url>
+                                    <username>${db.username}</username>
+                                    <password>${db.password}</password>
 
                                     <autocommit>true</autocommit>
                                     <srcFiles>
@@ -151,10 +158,10 @@
                                 </goals>
                                 <configuration>
                                     <jdbc>
-                                        <driver>${spring.datasource.driverClassName}</driver>
-                                        <url>${spring.datasource.url}</url>
-                                        <user>${spring.datasource.username}</user>
-                                        <password>${spring.datasource.password}</password>
+                                        <driver>${db.driverClassName}</driver>
+                                        <url>${db.url}</url>
+                                        <user>${db.username}</user>
+                                        <password>${db.password}</password>
                                     </jdbc>
                                     <generator>
                                         <database>
@@ -191,6 +198,12 @@
         <profile>
             <id>postgres</id>
 
+            <properties>
+                <db.driverClassName>org.postgresql.Driver</db.driverClassName>
+                <db.url>jdbc:postgresql://46.101.200.72:5432/btchackathon</db.url>
+                <db.dialect>POSTGRES</db.dialect>
+            </properties>
+
             <!-- The jOOQ code generator plugin -->
             <build>
                 <plugins>
@@ -208,10 +221,10 @@
                                 </goals>
                                 <configuration>
                                     <jdbc>
-                                        <driver>${spring.datasource.driverClassName}</driver>
-                                        <url>${spring.datasource.url}</url>
-                                        <user>${spring.datasource.username}</user>
-                                        <password>${spring.datasource.password}</password>
+                                        <driver>${db.driverClassName}</driver>
+                                        <url>${db.url}</url>
+                                        <user>${db.username}</user>
+                                        <password>${db.password}</password>
                                     </jdbc>
                                     <generator>
                                         <database>
