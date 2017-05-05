@@ -241,7 +241,7 @@
                                         </generate>
                                         <target>
                                             <packageName>org.jooq.example.db</packageName>
-                                            <directory>target/generated-sources/jooq-h2</directory>
+                                            <directory>target/generated-sources/jooq-postgres</directory>
                                         </target>
                                     </generator>
                                 </configuration>
