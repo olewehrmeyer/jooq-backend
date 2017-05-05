@@ -201,7 +201,7 @@
 
                         <executions>
                             <execution>
-                                <id>generate-h2</id>
+                                <id>generate-postgres</id>
                                 <phase>generate-sources</phase>
                                 <goals>
                                     <goal>generate</goal>
